@@ -11,7 +11,5 @@
 
   "postCreateCommand": ["bash", ".devcontainer/scripts/post_create.sh"],
 
-  "postAttachCommand": ["bash", ".devcontainer/scripts/post_attach.sh"],
-
   "forwardPorts": [22]
 }
