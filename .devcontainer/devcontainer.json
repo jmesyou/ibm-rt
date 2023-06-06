@@ -1,0 +1,17 @@
+{
+  "build": { "dockerfile": "Dockerfile"},
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd"
+      ]
+    }
+  },
+
+  "postCreateCommand": ["bash", ".devcontainer/scripts/post_create.sh"],
+
+  "postAttachCommand": ["bash", ".devcontainer/scripts/post_attach.sh"],
+
+  "forwardPorts": [22]
+}

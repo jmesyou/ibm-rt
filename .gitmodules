@@ -1,8 +1,8 @@
-[submodule "openj9/master"]
-	path = openj9/master
+[submodule "openj9"]
+	path = openj9
 	url = git@github.com:jmesyou/openj9.git
-[submodule "omr/master"]
-	path = omr/master
+[submodule "omr"]
+	path = omr
 	url = git@github.com:jmesyou/omr.git
 [submodule "jdk8"]
 	path = jdk8
