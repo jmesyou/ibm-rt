@@ -1,0 +1,21 @@
+[submodule "openj9"]
+  path=openj9/master
+  url=git@github.com:jmesyou/openj9.git
+
+[submodule "omr"]
+  path=omr/master
+  url=git@github.com:jmesyou/omr.git
+
+[submodule "jdk8"]
+  path=jdk8
+  url=git@github.com:ibmruntimes/openj9-openjdk-jdk8
+
+[submodule "jdk11"]
+  path=jdk11
+  url=git@github.com:ibmruntimes/openj9-openjdk-jdk11
+
+[submodule "jdk17"]
+  path=jdk17
+  url=git@github.com:ibmruntimes/openj9-openjdk-jdk17
+
+
