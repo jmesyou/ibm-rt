@@ -1,9 +1,9 @@
 [submodule "openj9"]
 	path = devroot/openj9/master
-	url = git@github.com:jmesyou/openj9.git
+	url = git@github.com:jmesyou/openj9
 [submodule "omr"]
 	path = devroot/omr/master
-	url = git@github.com:jmesyou/omr.git
+	url = git@github.com:jmesyou/omr
 [submodule "jdk8"]
 	path = jdk8
 	url = git@github.com:ibmruntimes/openj9-openjdk-jdk8
