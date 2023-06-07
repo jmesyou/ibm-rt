@@ -53,6 +53,7 @@ RUN apt-get update \
     cmake \
     cpio \
     curl \
+    direnv \
     file \
     g++-7 \
     gcc-7 \

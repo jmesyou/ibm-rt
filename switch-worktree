@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ -z $WORKTREES ]]; then
+  echo "WORKTREES env not set"
+  return 1
+fi
+
+ln -sf $WORKTREES/$1/$2 $WORKSPACE/$1
+
