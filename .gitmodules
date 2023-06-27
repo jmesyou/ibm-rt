@@ -1,8 +1,8 @@
 [submodule "openj9"]
-	path = devroot/openj9/master
+	path = openj9
 	url = git@github.com:jmesyou/openj9
 [submodule "omr"]
-	path = devroot/omr/master
+	path = omr
 	url = git@github.com:jmesyou/omr
 [submodule "jdk8"]
 	path = jdk8
@@ -13,3 +13,6 @@
 [submodule "jdk17"]
 	path = jdk17
 	url = git@github.com:ibmruntimes/openj9-openjdk-jdk17
+[submodule "tkg"]
+	path = TKG/tkg
+	url = git@github.com:adoptium/tkg

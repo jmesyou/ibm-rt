@@ -35,13 +35,16 @@ FROM --platform=amd64 ubuntu:20.04 AS base
 
 RUN apt-get update \
  && apt-get install -qq -y --no-install-recommends \
-    software-properties-common lsb-release wget gpg \
+    software-properties-common lsb-release wget gpg apt-transport-https \
  && add-apt-repository ppa:ubuntu-toolchain-r/test \
  # python 3.7+
  && add-apt-repository ppa:deadsnakes/ppa \
  # cmake 3.17+
- && wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null \
+ && wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
+  | gpg --dearmor - \
+  | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null \
  && apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main" \
+ # packages
  && apt-get update \
  && apt-get install -qq -y --no-install-recommends \
     ant \
@@ -55,10 +58,12 @@ RUN apt-get update \
     curl \
     direnv \
     file \
+    findutils \
     g++-7 \
     gcc-7 \
     gdb \
     git \
+    gradle \
     libasound2-dev \
     libcups2-dev \
     libdwarf-dev \
@@ -84,7 +89,6 @@ RUN apt-get update \
     pkg-config \
     ssh \
     systemtap-sdt-dev \
-    openjdk-11-jdk \
     unzip \
     vim \
     xvfb \
@@ -112,10 +116,8 @@ RUN sed -i -e 's|session\s*required\s*pam_loginuid.so|session optional pam_login
 # Expose SSH port.
 EXPOSE 22
 
-# Download and install boot JDKs.
-ENV BOOT_JDK_ROOT=/usr/share/jdk
-COPY scripts/fetch_jdk.sh /usr/bin/fetch_jdk.sh
-RUN bash /usr/bin/fetch_jdk.sh
+# sdk manager
+RUN curl -s "https://get.sdkman.io" | bash
 
 # dot files configuration
 RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply jmesyou \
