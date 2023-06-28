@@ -31,6 +31,7 @@
 
 FROM --platform=amd64 ubuntu:20.04 AS base
 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Install required OS tools.
 
 RUN apt-get update \
@@ -47,8 +48,6 @@ RUN apt-get update \
  # packages
  && apt-get update \
  && apt-get install -qq -y --no-install-recommends \
-    ant \
-    ant-contrib \
     autoconf \
     bash-completion \
     build-essential \
@@ -63,7 +62,6 @@ RUN apt-get update \
     gcc-7 \
     gdb \
     git \
-    gradle \
     libasound2-dev \
     libcups2-dev \
     libdwarf-dev \
@@ -116,11 +114,14 @@ RUN sed -i -e 's|session\s*required\s*pam_loginuid.so|session optional pam_login
 # Expose SSH port.
 EXPOSE 22
 
+USER root
+
 # sdk manager
-RUN curl -s "https://get.sdkman.io" | bash
+RUN curl -s "https://get.sdkman.io" | bash \
+ && source "$HOME/.sdkman/bin/sdkman-init.sh" \
+ && sdk install ant \
+ && sdk install gradle
 
 # dot files configuration
 RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply jmesyou \
  && pip install pygments
-
-USER root
