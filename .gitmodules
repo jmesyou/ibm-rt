@@ -19,3 +19,6 @@
 [submodule "microbench"]
 	path = microbench
 	url = git@github.com:jmesyou/openj9-openjdk-microbenchmarks
+[submodule "openj9-openjdk-testbench"]
+	path = testbench
+	url = git@github.com:jmesyou/openj9-openjdk-testbench
