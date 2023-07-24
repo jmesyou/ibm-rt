@@ -5,8 +5,8 @@ services:
       context: ./docker/workspace
     tty: true
     volumes:
-      - ../:/home/vscode/workspace:cached
-      - ~/.ssh:/home/vscode/.ssh:ro
+      - ../:/workspace:cached
+      - ~/.ssh:/root/.ssh:ro
     ports:
       - 5555:5555
 

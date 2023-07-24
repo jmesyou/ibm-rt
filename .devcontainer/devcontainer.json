@@ -7,9 +7,9 @@
 
   "service": "workspace",
 
-  "remoteUser": "vscode",
+  "remoteUser": "root",
 
-  "workspaceFolder": "/home/vscode/workspace",
+  "workspaceFolder": "/workspace",
 
   "customizations": {
     "vscode": {
