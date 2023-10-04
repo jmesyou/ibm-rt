@@ -37,6 +37,7 @@ RUN chsh -s /bin/bash
 
 RUN apt install -y --no-install-recommends \
     bear \
+    clangd \
     git \
     openssh-client \
     python3 \
