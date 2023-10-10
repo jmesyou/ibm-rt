@@ -1,11 +1,16 @@
 {
     "folders": [
         {
-            "name": "jdk17",
+            "path": "jdk8"
+        },
+        {
+            "path": "jdk11"
+        },
+        {
             "path": "jdk17"
         },
         {
-            "path": "microbench"
+            "path": "workbench"
         },
         {
             "path": "testbench"
