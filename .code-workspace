@@ -10,7 +10,7 @@
             "path": "jdk17"
         },
         {
-            "path": "workbench"
+            "path": "microbench"
         },
         {
             "path": "testbench"
