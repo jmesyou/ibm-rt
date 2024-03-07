@@ -21,5 +21,9 @@
     }
   },
 
-  "forwardPorts": [22]
+  "forwardPorts": [22],
+
+  "privileged": true,
+  "capAdd": ["SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined"]
 }
